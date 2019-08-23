@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+	<link rel="stylesheet" href="/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+	<h1><%= title %></h1>
+	<form class="form-inline">
+		<!-- 새로운 ToDo 항목 추가 -->
+		<div class="form-group">
+			<input type="text" class="form-control" id="new_todo_title" placeholder="제목" style="width:200px;">
+			<input type="text" class="form-control" id="new_todo_contents" placeholder="내용" style="width:300px;">
+			<input type="text" class="form-control" id="datepicker" placeholder="기한" style="width:100px;">
+		</div>
+		<script>
+			$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+		</script>
+		<button type="button" class="btn btn-primary">추가</button>
+	</form>
+	<br><br>
+	<table class="table">
+		<!-- ToDo 목록 -->
+		<thead>
+			<tr>
+				<th>우선순위</th>
+				<th>제목</th>
+				<th>내용</th>
+				<th>기한</th>
+				<th>수정</th>
+				<th>완료</th>
+				<th>삭제</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+
+	<!--Modal windows-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+					</button>
+					<div class="modal-title">
+						제목 :
+						<input type="text" class="modal-control" id="modify_title" placeholder="제목을 수정해주세요!">
+					</div>
+				</div>
+				<div class="modal-body">
+					<textarea name="textarea" class="modal-control" id="modify_contents" cols="70" rows="8"
+						placeholder="내용을 수정해주세요!"></textarea>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-modal-modify" style="background-color:#F4FA58" id="myButtons1">
+						수정
+					</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						닫기
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script src="/jquery-3.1.0.min.js"></script>
+<script src="/bootstrap.min.js"></script>
+<script src="/javascripts/todo.js"></script> <!-- ToDo 기능 구현 내용 -->
+
+</html>
