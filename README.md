@@ -7,3 +7,5 @@ __node app.js__ 또는
 __npm start__ 로 실행이 가능하며,
 로컬 접속은
 __localhost:3000__ 으로 가능합니다!
+
+![KakaoTalk_20190823_172129632](https://user-images.githubusercontent.com/15652602/63578035-9a0b2c80-c5ca-11e9-98fb-27ebb98cd96b.jpg)
